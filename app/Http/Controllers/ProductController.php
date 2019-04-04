@@ -17,15 +17,6 @@ class ProductController extends Controller
         return product::all();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -44,9 +35,11 @@ class ProductController extends Controller
      * @param  \App\model\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(product $product)
+    public function show($id)
     {
-        //
+        $producto = Product::find( $id );
+
+   	    return $producto;
     }
 
     /**
